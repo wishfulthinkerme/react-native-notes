@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View,
+  ScrollView,
 } from 'react-native';
 import ListItem from './../../components/ListItem';
 
@@ -39,7 +39,7 @@ const fakeItems = [
 
 ]
 export default () => (
-  <View>
+  <ScrollView>
     {fakeItems.map((item, key) => <ListItem key={key} {...item} />)}
-    </View>
+    </ScrollView>
 );
