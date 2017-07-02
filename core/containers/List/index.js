@@ -11,6 +11,32 @@ const fakeItems = [
     excerpt: 'Test content',
     content: 'Test content big',
   },
+  
+  {
+    id: 0,
+    title: 'Test',
+    excerpt: 'Test content',
+    content: 'Test content big',
+  },
+  {
+    id: 0,
+    title: 'Test',
+    excerpt: 'Test content',
+    content: 'Test content big',
+  },
+  {
+    id: 0,
+    title: 'Test',
+    excerpt: 'Test content',
+    content: 'Test content big',
+  },
+  {
+    id: 0,
+    title: 'Test',
+    excerpt: 'Test content',
+    content: 'Test content big',
+  },
+
 ]
 export default () => (
   <View>
