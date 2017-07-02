@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   ScrollView,
+  AsyncStorage,
 } from 'react-native';
 import ListItem from './../../components/ListItem';
 
@@ -11,7 +12,7 @@ const fakeItems = [
     excerpt: 'Test content',
     content: 'Test content big',
   },
-  
+
   {
     id: 0,
     title: 'Test',
@@ -41,5 +42,5 @@ const fakeItems = [
 export default () => (
   <ScrollView>
     {fakeItems.map((item, key) => <ListItem key={key} {...item} />)}
-    </ScrollView>
+  </ScrollView>
 );

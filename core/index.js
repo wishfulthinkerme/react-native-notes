@@ -1,15 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   View,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
+import NewItemBtn from './components/NewItemBtn';
 import List from './containers/List';
+import Form from './containers/Form';
 
-export default () => (
-  <View style={styles.container}>
-    <List />
-  </View>
-);
+export default class Core extends Component {
+  state = {
+    route: 'List',
+  }
+
+  setRoute = (route) => () => this.setState({
+    route: route,
+  });
+
+  render() {
+    const { route } = this.state;
+    return (
+      <View style={styles.container}>
+        {route === 'List' && <List />}
+        {route === 'List' && <NewItemBtn
+          onPress={this.setRoute('Form')}
+        />
+        }
+        {route === 'Form' && <Form goBack={this.setRoute('List')}/>}
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
