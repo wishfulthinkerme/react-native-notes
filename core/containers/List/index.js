@@ -1,46 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   ScrollView,
   AsyncStorage,
 } from 'react-native';
 import ListItem from './../../components/ListItem';
 
-const fakeItems = [
-  {
-    id: 0,
-    title: 'Test',
-    excerpt: 'Test content',
-    content: 'Test content big',
-  },
 
-  {
-    id: 0,
-    title: 'Test',
-    excerpt: 'Test content',
-    content: 'Test content big',
-  },
-  {
-    id: 0,
-    title: 'Test',
-    excerpt: 'Test content',
-    content: 'Test content big',
-  },
-  {
-    id: 0,
-    title: 'Test',
-    excerpt: 'Test content',
-    content: 'Test content big',
-  },
-  {
-    id: 0,
-    title: 'Test',
-    excerpt: 'Test content',
-    content: 'Test content big',
-  },
+export default class List extends Component {
 
-]
-export default () => (
-  <ScrollView>
-    {fakeItems.map((item, key) => <ListItem key={key} {...item} />)}
-  </ScrollView>
-);
+  constructor(props) {
+    super(props);
+    AsyncStorage.getItem('notes', this.setNotes);
+    this.state = {
+      notes: [],
+    };
+  }
+
+  setNotes = (errors, notes) => {
+    const notesObj = JSON.parse(notes);
+    console.log(notesObj)
+    if (!notesObj) {
+      return;
+    }
+    this.setState({
+      notes: notesObj,
+    });
+  }
+
+  render() {
+    return (
+      <ScrollView>
+        {this.state.notes.map((item, key) => <ListItem key={key} {...item} />)}
+      </ScrollView>
+    );
+  }
+}
