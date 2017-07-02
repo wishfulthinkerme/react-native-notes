@@ -3,13 +3,16 @@ import {
   View,
   Text,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 
 const ListItem = ({ title, excerpt }) => (
-  <View style={styles.container}>
-    <Text style={styles.title}>{title}</Text>
-    <Text style={styles.excerpt}>{excerpt}</Text>
-  </View>
+  <TouchableOpacity style={styles.container}>
+    <View>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.excerpt}>{excerpt}</Text>
+    </View>
+  </TouchableOpacity>
 );
 
 ListItem.propTypes = {
@@ -21,6 +24,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#eef1f5',
     padding: 10,
+    marginBottom: 10,
   },
   title: {
     color: '#a5a9af',
