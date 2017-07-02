@@ -1,10 +1,12 @@
 import React from 'react';
 import {
-  View
+  View,
+  Text,
+  StyleSheet,
 } from 'react-native';
 
 const ListItem = ({ title, excerpt }) => (
-  <View>
+  <View style={styles.container}>
     <Text>{title}</Text>
     <Text>{excerpt}</Text>
   </View>
@@ -13,5 +15,12 @@ const ListItem = ({ title, excerpt }) => (
 ListItem.propTypes = {
 
 }
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#ffffff',
+    borderWidth: 1,
+    borderColor: '#eef1f5',
+  },
+});
 
 export default ListItem;
