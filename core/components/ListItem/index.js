@@ -7,8 +7,8 @@ import {
 
 const ListItem = ({ title, excerpt }) => (
   <View style={styles.container}>
-    <Text>{title}</Text>
-    <Text>{excerpt}</Text>
+    <Text style={styles.title}>{title}</Text>
+    <Text style={styles.excerpt}>{excerpt}</Text>
   </View>
 );
 
@@ -20,7 +20,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderWidth: 1,
     borderColor: '#eef1f5',
+    padding: 10,
   },
+  title: {
+    color: '#a5a9af',
+    fontSize: 20,
+  },
+  excerpt: {
+    color: '#dcdddf',
+  }
 });
 
 export default ListItem;
