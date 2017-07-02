@@ -20,7 +20,7 @@ export default class Core extends Component {
     const { route } = this.state;
     return (
       <View style={styles.container}>
-        {route === 'List' && <List />}
+        {route === 'List' && <List setRoute={this.setRoute}/>}
         {route === 'List' && <NewItemBtn
           onPress={this.setRoute('Form')}
         />

@@ -18,7 +18,7 @@ export default class List extends Component {
 
   setNotes = (errors, notes) => {
     const notesObj = JSON.parse(notes);
-    console.log(notesObj)
+
     if (!notesObj) {
       return;
     }
@@ -27,10 +27,14 @@ export default class List extends Component {
     });
   }
 
+  showSingle = (item) => () => {
+    this.props.setRoute('Single')();
+  }
+
   render() {
     return (
       <ScrollView>
-        {this.state.notes.map((item, key) => <ListItem key={key} {...item} />)}
+        {this.state.notes.map((item, key) => <ListItem key={key} {...item} onPress={this.showSingle(item)}/>)}
       </ScrollView>
     );
   }

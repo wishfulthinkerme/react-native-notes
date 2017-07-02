@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const ListItem = ({ title, excerpt }) => (
-  <TouchableOpacity style={styles.container}>
+const ListItem = ({ title, excerpt, onPress }) => (
+  <TouchableOpacity style={styles.container} onPress={onPress}>
     <View>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.excerpt}>{excerpt}</Text>
