@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Text,
@@ -16,8 +17,12 @@ const ListItem = ({ title, excerpt, onPress, onLongPress }) => (
 );
 
 ListItem.propTypes = {
-
+  title: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
+  onLongPress: PropTypes.func.isRequired,
+  onPress: PropTypes.func.isRequired,
 }
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#ffffff',
