@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
   TouchableOpacity,
   StyleSheet,
@@ -6,11 +8,15 @@ import {
 } from 'react-native';
 
 
-export default ({onPress}) => (
+const newItemBtn = ({onPress}) => (
   <TouchableOpacity style={styles.container} onPress={onPress}>
     <Text style={styles.plus}>+</Text>
   </TouchableOpacity>
 )
+
+newItemBtn.propTypes = {
+  onPress: PropTypes.func.isRequired,
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -28,3 +34,5 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
 }); 
+
+export default newItemBtn;
